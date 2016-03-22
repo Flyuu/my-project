@@ -3,10 +3,11 @@ body{
 }
 .container1{
     width: auto;
-    height:580px;
+  /*  height:580px;*/
     padding: 20px;
     background-color: #eee;
     border: 1px solid #999999;
+    overflow: auto;
 }
 .container_left{
     float: left;
@@ -38,7 +39,7 @@ strong{
     float: right;
     right: 120px;
     height: 500px;
-    background-color: white;
+    background-color: #ffffff;
     border: 1px solid #999999;
     padding: 20px;
 }
