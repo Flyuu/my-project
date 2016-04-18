@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>IFE JavaScript Task 01</title>
+</head>
+<body>
+
+<h3>污染城市列表</h3>
+<ul id="aqi-list">
+    <!--
+        <li>第一名：福州（样例），10</li>
+          <li>第二名：福州（样例），10</li> -->
+</ul>
+
+<script type="text/javascript">
+
+    var aqiData = [
+        ["北京", 90],
+        ["上海", 50],
+        ["福州", 10],
+        ["广州", 50],
+        ["成都", 90],
+        ["西安", 100]
+    ];
+    (function () {
+        function sortnumber(a,b){
+            return b[1] - a[1];   //为sort函数传递一个比较参数，这里是倒序
+        }
+        aqiData.sort(sortnumber);   //为aqiData进行排序
+        var el = document.getElementById("aqi-list");
+        for(var i=0;i<6;i++)
+        {
+            if (aqiData[i][1]>60){
+                var list = document.createElement("li");
+                list.innerHTML = "第"+(i+1)+"名 "+aqiData[i];
+                el.appendChild(list);
+               // el.innerHTML +='<li>xxx</li>';
+            }
+        }
+
+
+    })();
+    ///                 总结
+    /*函数对一维数组进行排序的函数:sort(el)需要传递一个比较参数，
+    function(a ,b){
+        a - b;   升序，倒叙 b -a
+    }
+    函数对二维数组的某列进行排序：比较函数里面写a[n]-b[n]  n为哪列
+
+    在div后面添加一个标签：
+    div.appendChild(document.createElement("p"))
+    div.innerHTML +='<li>xxx</li>';*/
+
+</script>
+</body>
+</html>
